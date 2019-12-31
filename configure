@@ -112,7 +112,7 @@ channel=11
 wmm_enabled=0
 macaddr_acl=0
 auth_algs=1
-wpa=2PASSPHRASE
+wpa=2
 $([ $AP_PASSPHRASE ] && echo "wpa_passphrase=${AP_PASSPHRASE}")
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP CCMP
@@ -153,7 +153,7 @@ iface ap0 inet static
     hostapd /etc/hostapd/hostapd.conf
 
 allow-hotplug wlan0
-iface wlan0 inet manual
+iface wlan0 inet dhcp
     wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 iface AP1 inet dhcp
 EOF
